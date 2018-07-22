@@ -4,11 +4,12 @@ from . models import Post
 
 
 def get_posts(request):
-    posts = object.Post.all()
+    posts = Post.objects.all()
     return render(request, 'posts_list.html', {"posts": posts})
 
-def get_post(request, post_id):
-    post = get_object_or_404(Post, id=post_id)
+
+def get_post(request, pk):
+    post = get_object_or_404(Post, id=pk)
     return render(request, 'post_detail.html', {"post": post})
 
 
