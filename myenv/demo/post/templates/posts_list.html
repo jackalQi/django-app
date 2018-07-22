@@ -8,13 +8,13 @@
       <div class="card-body">
         <h1 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.name }} </a></h1>
         <p class=card-text">{{ post.age }} {{post.post_date}}</p>
-        <button class="btn btn-primary"> edit </button>
+        <a href="{% url 'edit_post' pk=post.pk %}"> edit</a>
         <button class="btn btn-primary"> delete </button>
       </div>
     </div>
   </div>
 </div>
 {% endfor %}
-        <button class="btn btn-primary"> New </button>
+<a href="{% url 'new_post' %}"> New </a>
 
 {% endblock %}
